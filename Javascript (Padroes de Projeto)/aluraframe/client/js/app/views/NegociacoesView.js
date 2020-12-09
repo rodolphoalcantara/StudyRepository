@@ -10,10 +10,10 @@ class NegociacoesView extends View{
         <table class="table table-hover table-bordered">
         <thead>
             <tr>
-                <th>DATA</th>
-                <th>QUANTIDADE</th>
-                <th>VALOR</th>
-                <th>VOLUME</th>
+                <th onclick="negociacaoController.sortList('data')">DATA</th>
+                <th onclick="negociacaoController.sortList('quantidade')">QUANTIDADE</th>
+                <th onclick="negociacaoController.sortList('valor')">VALOR</th>
+                <th onclick="negociacaoController.sortList('volume')">VOLUME</th>
             </tr>
         </thead>
         
@@ -29,7 +29,7 @@ class NegociacoesView extends View{
         </tbody>
         <tfoot>
             <td colspan="3"></td>
-            <td>${model.negociacoes.reduce((total, n) => total += n.volume, 0.0)}</td>
+            <td>${model.volumeTotal}</td>
         </tfoot>
     </table>        
         `;
