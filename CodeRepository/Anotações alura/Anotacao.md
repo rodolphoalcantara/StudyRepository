@@ -247,4 +247,144 @@ class Exemplo{
 
 ----------------------------------------------------------------------------------------------------
 
+## Indexed DB - Conceitos
+
+Para salvarmos dados localmente usamos o __Indexed DB__. Para criarmos o banco localmente na maquina do usuario, devemos chamar o método _.open_ que pertence a *indexedDB* de *window*.
+
+`var openRequest = window.indexedDB.open('bancoLocal', 1)` 
+
+O primeiro parametro é o nome do banco que será aberto, já o segundo é o número da versão do banco.
+
+A variavel que armazenamos a abertura de uma banco com nome e versão definido, agora possui propriedades importantes que serão chamados de acordo com o status da requisição. Essas propriedades são handlers de eventos.
+
+*openRequest.onupgradeneeded = event => {}* -> é executado quando criamos ou alteramos um banco existente. Nesse parametro é importante colocar a criação de uma object store, bem como as lógicas por tras dessa store.
+
+*openRequest.onsuccess = event => {}* -> é executado quando se consegue obter conexão com banco de dados
+
+*openRequest.onerror = event => {}* -> é executado quando houver algum problema com a requisição
+
+No nosso handler *.onupgradedneeded* recebemos o resultado do evento e armazenamos dentro de uma variavel. ex.:
+
+`let myConnection = event.target.result;`
+
+E depois usamos o método *.creatObjectStore*, que essa variavel passou a ter, para criarmos nossa Object Store (onde nossos objetos ficarão armazenados, dentro do nosso banco 'bancoLocal');
+
+`myConnection.createObjectStore('obStore', { autoIncrement: true })`
+
+Esse método cria uma objet store com o nome passado em primeiro parametro e em segundo parametro um parametro opcional, nele pode-se passar um keyPath ou um autoIncrement, esse ultimo usado no exemplo anterior serve para definir automaticamente id's para os objetos adicionados.
+
+
+Para que possamos acessar nossa store que foi criada com o nome de 'obStore' é necessario uma transação. Essa transação é obtida a partir da nossa conexão. ex.:
+
+`let transaction = connection.transaction(['obStore'], 'readwrite');` -> neste caso estamos declarando-a com let por estar dentro de uma function.
+
+Essa transação recebe uma transação com a conexão. Esse método *.transaction* recebe dois parametros. O primeiro parametro é o nome da nossa store criada anteriormente. E o segundo parametro é o tipo de transação que poderá ser *readwrite para ler e escrever; readonly para apenas ler*
+
+A partir desta transação podemos obter nossa objetcStore que armazenamos em outra variavel.
+
+`let store = transaction.objectStore('obStore');`
+
+Com esta variavel podemos, então, realizar transações de persistência(gravar, incluir, alterar e listar).
+
+
+A nossa variavel *store* agora possui um método chamado *.openCursor()*, o retorno desse método deve ser armazenado em outra variavel para que possamos apontar para cada objeto dentro da nossa store. Essa nossa nova variavel tambem possui os handlers *onsuccess* e *onerror*. A partir do resultado de evento do handler on sucess podemos criar uma variavel que será o evento atual (no exemplo a seguir chamada de *actual*), ou seja, o objeto apontado pelo ponteiro *cursor.* Nossa variavel *actual* terá o valor do nosso objeto, caso haja algum, ou null, caso não haja nenhum. No final podemos chamar o método *.continue()* da nossa *actual* e assim apontarmos para o próximo objeto.
+
+Assim, podemos passar por cada objeto até chegarmos no valor null, ou seja, até acabar nossos objetos dentro da *store*.
+
+exemplo de código de uma listagem de objetos:
+
+class Teste{
+
+    function listAll(){
+        let transaction = connection.transaction(['negociacoes'], 'readwrite');
+        let store = transaction.objectStore('negociacoes');
+        let cursor = store.openCursor();
+        let negociacoes = [];
+        cursor.onsuccess = event => {
+            let actual = event.target.result;
+            if(actual){
+                let data = actual.value;
+                negociacoes.push(new Negociacao(data._data, data._quantidade, data._valor));
+                actual.continue();
+            }else{
+                console.log(negociacoes);
+            }
+        }
+        cursor.onerror = event => {
+            console.log(event.target.error.name);
+        }
+    }
+}
+
+_________________________________________________________________________
+
+## Monkey Patch
+
+Simplificando, o __Monkey Patch__ é uma padrão no qual substituímos métodos por outros em determinado momento em nosso código para que alteremos a sua função inicial sem modificarmos a classe na qual ela pertence.
+
+Um exemplo é com o método close de uma conexão. Quando não queremos que essa conexão seja fechada pelo método close *(que pode ser chamado por qualquer um)* e queremos criar um método dentro da classe que foi implementada para criar uma conexão *(fazendo com que a classe seja a única responsavel por fechar a conexão)*, podemos substituir o método close, de uma conexão, por um erro.
+
+Ex.:
+
+class Teste{
+
+    var close = null;
+    var connection = null;
+
+    /* Códigos foram escondidos */
+
+    close = connection.close.bind(connection);
+    connection.close = function (){
+        //monkey patch
+        throw new Error('Você não pode fechar diretamente a conexão.')
+    }
+
+    /* Códigos foram escondidos */
+
+    static closeConnection() {
+        close();
+        connection = null;
+    }
+}
+
+Neste exemplo usamos variaveis __close__ e __connection__ iniciadas como *null* para segurar um estado. Para a variavel *close* passamos o método *.close* no contexto de uma *connection*. E logo após substituimos o método *close* de connection por uma função anonima que lança um erro, fazendo com que quem chame o método close se depare com um erro e não possa prosseguir.
+
+Mais embaixo declaramos uma função estática que será a responsável por fechar a conexão. Nela utilizamos a variavel close, que agora é uma função no contexto de connecção responsavel por executar o método close antes do Monkey Patch.
+
+
+_________________________________________________
+
+## Modules Pattern
+
+Simplificando, o __Module Pattern__ é um padrão no qual encapsulamos uma classe como retorno de uma função com o nome da classe. O objetivo é fazer com que as variaveis que antes eram globais pertençam a função, não podendo ser chamada por ninguem de fora da função.
+
+Ex.:
+
+var ConnectionFactory = (function () {
+
+    const stores = ['negociacoes'];
+    const version = 4;
+    const dbName = 'aluraframe';
+    var connection = null;
+    var close = null;
+
+    return class ConnectionFactory {
+        /*
+        Código Omitido
+        */
+    }
+})();
+
+O exemplo acima mostra que toda uma *classe*, *viaveis* e *constantes* estão envolvidos por uma função anonima que está dentro da variavel *ConnectionFactory* que é de mesmo nomes da classe que é o retorno da função.
+
+Isso é importante para que as constantes e variaveis não sejam acessadas por ninguem, apenas pela classe de retorno da função.
+
+A função *ConnectionFactory* não poderia ser chamada, ela precisa ser autodeclarada. Para que isso ocorra devemos usar *()* no final da declaração da função, como podemos ver nos exemplos.
+
+`var funcaoAutodeclarada = function (){ implementação da função }()`<--- Esse abre/fecha parenteses é o responsavel por esta autodeclaração. 
+
+
+
+
+
 

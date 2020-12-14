@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo IndexedDB</title>
+</head>
+<body>
+    <script src="./js/app/models/Negociacao.js"></script>
+    <script>
+        var connection;
+        //params: nome do banco a ser aberto, numero da versão do banco
+        var openRequest = window.indexedDB.open('aluraframe', 2);
+
+        //cria ou altera um banco já existente
+        openRequest.onupgradeneeded = event => {
+            console.log('cria ou altera banco');
+            //pega o resultado do evento e armazena em uma var
+            let myConnection = event.target.result;
+            //cria uma store de objetos vazia(parecida com um schema porem não está ligado a tipos)
+
+            if(myConnection.objectStoreNames.contains('negociacoes')){
+                myConnection.deleteObjectStore('negociacoes')
+            }
+            //metodo cria uma object store com o nome passado em primeiro parametro e em segundo parametro
+            //o incremento automatico, ou seja, o id do objeto que será guardado será definido automaticamente.
+myConnection.createObjectStore('negociacoes', { autoIncrement: true })            
+        };
+
+        //executado quando conseguir obter conexão
+        openRequest.onsuccess = event => {
+            //result retorna um IDBDatabase
+            console.log('conexão obtida com sucesso');
+            connection = event.target.result;
+        };
+
+        //executado quando houver algum problema
+        openRequest.onerror = event => {
+            console.log(event.target.error);
+        }
+
+        function add(){
+            //precisa-se de uma transação para acessar o objectstore por meio da conecção
+            //param: objectStore que será acessada, tipo de transação (ex.: readwrite para ler e escrever; readonly para apenas ler)
+            let transaction = connection.transaction(['negociacoes'], 'readwrite');
+
+            //apartir da transaction pode-se acessar a object store
+            let store = transaction.objectStore('negociacoes');
+
+            let negociacao = new Negociacao(new Date(), 1, 200);
+
+            //o retorno de .add devolve uma request, pois é possivel haver dois cenarios:
+            let request = store.add(negociacao);
+
+            // caso a requisição seja bem sucedida
+            request.onsuccess = event => {
+                console.log('Negociação incluida com sucesso.')
+            };
+            //caso a requisição seja mal sucedida
+            request.onerror = event => {
+                console.log('Não foi possível incluir a negociacao.')
+            };
+            
+        }
+
+        function listAll(){
+            let transaction = connection.transaction(['negociacoes'], 'readwrite');
+            let store = transaction.objectStore('negociacoes');
+            let cursor = store.openCursor();
+            let negociacoes = [];
+
+            cursor.onsuccess = event => {
+                let actual = event.target.result;
+
+                if(actual){
+                    let data = actual.value;
+                    negociacoes.push(new Negociacao(data._data, data._quantidade, data._valor));
+
+                    actual.continue();
+
+                }else{
+                    console.log(negociacoes);
+                }
+            }
+
+            cursor.onerror = event => {
+                console.log(event.target.error.name);
+            }
+
+        }
+
+
+    </script>    
+</body>
+</html>

@@ -10,9 +10,9 @@ class DateHelper{
     }
 
     static convertForDate(text){
-        if(!/^\d{4}-\d{2}-\d{2}$/.test(text)) 
-            throw new Error('Deverá estar no formato YYYY-MM-DD');
+        if(!/\d{2}\/\d{2}\/\d{4}/.test(text)) 
+            throw new Error('Deverá estar no formato dd/mm/aaaa');
 
-        return new Date(...text.split('-').map((item, indice) => item - indice%2));
+        return new Date(...text.split('/').reverse().map((item, indice) => item - indice%2));
     }
 }
