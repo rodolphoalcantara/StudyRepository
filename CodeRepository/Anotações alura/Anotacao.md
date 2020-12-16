@@ -383,6 +383,76 @@ A função *ConnectionFactory* não poderia ser chamada, ela precisa ser autodec
 
 `var funcaoAutodeclarada = function (){ implementação da função }()`<--- Esse abre/fecha parenteses é o responsavel por esta autodeclaração. 
 
+_________________________________________
+
+## Padrão DAO
+
+Simplificando, o padrão __DAO__ (*Data Acess Object*) serve para isolar o código responsável por realizar __operações de persistencia__ (*gravar, incluir, alterar e listar*) ou __operações CRUD__ (*Create, Read, Update e Delete*).
+
+A vantagem é que para a manutenção, o desenvolvedor sabe onde encontrar as operações, não precisando conhecer detalhes da *store* ou do *cursor*.
+
+_____________________________________
+
+## Comparando dois Objetos em Javascript
+
+Assim como em outras linguagens, o Javascript não compara os valores de objetos criados *(apenas de tipos literais)*, ou seja, quando instanciamos uma classe e comparamos com outra classe instanciada em outro variavel, mesmo que as propriedades tenham valores iguais, esta comparação será *false*. Veja código abaixo:
+
+class Teste{
+
+    var hoje = new Date();
+
+    n1 = new Negociacao(hoje, 1, 100)
+    n2 = new Negociacao(hoje, 1, 100)
+
+    n1 == n2;
+    //qual será o retorno ??
+}
+
+O retorno para essa comparação será *false*! Mas porque se temos exatamente a mesma negociação ??
+
+Isso acontece porque ao instanciarmos uma nova Negociação com __new__ a referencia é outra. Os objetos *Negociacao* (n1 e n2) estão "apontando" para referencias diferentes!
+
+Mas há um meio de contornarmos isso, usando o método *.stringfy()* do nosso __JSON__.
+
+Quando transformamos um objeto em string com esse método, podemos comparar diretamente. Pois, conseguimos realizar comparações com tipos literais *(String, Number, ...)*
+
+Veja o exemplo de código a seguir:
+
+class Teste{
+
+    var hoje = new Date();
+
+    n1 = new Negociacao(hoje, 1, 100)
+    n2 = new Negociacao(hoje, 1, 100)
+
+    JSON.stringfy(n1) == JSON.stringfy(n2);
+    //qual será o retorno ??
+}
+
+Neste caso, o retorno da comparação será *true*. Pois, estamos comparando tipos literais *String* de objetos que foram convertidos.
+
+Com isso nosso *"objeto"* ganha um novo superpoder. Como o método *.indexOf()*, utilizado para comparar itens de um array, só compara as referencias de objetos, não conseguiremos utilizar nossa nova solução.
+
+Porém, quando convertemos nosso objeto em *String* podemos utilizar um novo método, que irá atuar como um *.forEach()* em nossos arrays de *String*.
+
+O método *.some()* será responsável por varrer nosso array em busca de uma condição. Quando ele achar o que procuramos ele retornará *true* imediatamente e dará um *break* na procura. Porém, se ele não achar, mesmo depois de varrer todo nosso array, ele retornará *false*.
+
+Veja o exemplo de código a seguir:
+
+class Teste{
+
+    var letras = ['a','b','c','d','e'];
+
+    let comp1 = letras.some(letra => letra == 'c');
+    //qual será o retorno ?
+
+    let comp2 = letras.some(letra => letra == 'z')
+    //qual será o retorno ?
+}
+
+Para a primeira comparação *(comp1)* o retorno será *true*, pois quando nosso método estava varrendo nosso array e chegou na terceira posição, ele satifez a condição *(letra == 'c')* e retornou imediatamente o resultado interrompendo a procura.
+
+Já na segunda comparação *(comp2)* o retorno será *false*, pois, mesmo que percorrido todo array, o método não foi capaz de satisfazer a condição *(letra == 'z')*, porque a letra 'z' não existe em nosso array. E por isso, retornou, no final de sua procura, o resultado *false*.
 
 
 

@@ -19,65 +19,58 @@ class NegociacaoController {
       'text');
 
     this._actualOrder = '';
+    this._service = new NegociacaoService();
+    
+    this._init();
+  }
 
-    ConnectionFactory
-      .getConnection()
-      .then(connection => new NegociacaoDao(connection))
-      .then(dao => dao.listAll())
+  _init(){
+    this._service
+      .list()
       .then(negociacoes => 
         negociacoes.forEach(negociacao => 
           this._listaNegociacoes.add(negociacao)))
-      .catch(error => {
-        console.log(error);
-        this._mensagem.text = error;
-      })
+      .catch(error => this._mensagem.text = error)
+
+      setInterval(() => {
+        this.importaNegociacoes();
+      }, 3000)
   }
 
   add(event) {
     event.preventDefault();
+    let negociacao = this._createNegociacao();
 
-    ConnectionFactory
-      .getConnection()
-      .then(connection => {
-        let negociacao = this._createNegociacao();
-        new NegociacaoDao(connection)
-          .add(negociacao)
-          .then(() => {
-            this._listaNegociacoes.add(negociacao);
-            this._mensagem.text = 'Negociação adicionada com sucesso';
-            this._limpaFormulario();
-          })
-        })
+    this._service
+      .register(negociacao)
+      .then(mensagem => {
+        this._listaNegociacoes.add(negociacao)
+        this._mensagem.text = mensagem;
+        this._limpaFormulario()
+      })
       .catch(error => this._mensagem.text = error);
     }
 
   importaNegociacoes() {
-    let service = new NegociacaoService();
+    this._service
+    .import(this._listaNegociacoes.negociacoes)
+      .then(negociacoes => negociacoes.forEach(negociacao => {
+          this._listaNegociacoes.add(negociacao);
+          this._mensagem.texto = 'Negociações do período importadas'   
+      }))
+      .catch(erro => this._mensagem.texto = erro);
 
-    Promise.all([
-      service.obterNegociacoesDaSemana(),
-      service.obterNegociacoesDaSemanaAnterior(),
-      service.obterNegociacoesDaSemanaRetrasada()
-    ]).then(negociacoes => {
-      negociacoes
-      .reduce((flatArray, array) => flatArray.concat(array) , [])
-      .forEach(negociacao => this._listaNegociacoes.add(negociacao))
-      this._mensagem.text = 'Negociações da semana obtida com sucesso.'
-    }).catch(
-      error => this._mensagem.text = error
-    );
   }
 
   delete() {
 
-    ConnectionFactory
-      .getConnection()
-      .then(connection => new NegociacaoDao(connection))
-      .then(dao => dao.clearAll())
-      .then(mensagem => {
-        this._mensagem.tet = mensagem
+    this._service
+      .clear()
+      .then(msg =>{
+        this._mensagem.text = msg
         this._listaNegociacoes.clear();
       })
+      .catch(error => this._mensagem.text = error);
   }
 
   _createNegociacao() {
