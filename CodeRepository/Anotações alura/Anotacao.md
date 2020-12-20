@@ -454,7 +454,190 @@ Para a primeira comparação *(comp1)* o retorno será *true*, pois quando nosso
 
 Já na segunda comparação *(comp2)* o retorno será *false*, pois, mesmo que percorrido todo array, o método não foi capaz de satisfazer a condição *(letra == 'z')*, porque a letra 'z' não existe em nosso array. E por isso, retornou, no final de sua procura, o resultado *false*.
 
+__________________________________________________
+
+## Fetch API
+
+*Fetch* é uma API para se lidar com busca de recursos parecido com as requisições *XMLHttpRequest*.
+
+A idéia é ser mais simples, poderoso e flexível.
+
+Veja o exemplo de um código *XHR* para realizar requisições do tipo __GET__
+
+class Teste {
+
+    get(url) {
+        return new Promise((resolve, reject) => {
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', url);
+        xhr.onreadystatechange = () => {
+
+            if (xhr.readyState == 4) {
+            if (xhr.status == 200) {
+                resolve(JSON.parse(xhr.responseText));
+            } else {
+                reject(xhr.responseText);
+            }
+            }
+        };
+        xhr.send();
+        })
+    }
+}
+
+Note que estamos instanciando um objeto *XMLHttpRequest*, abrindo a requisição passando uma url e um método e escutando as mudanças dos estados da requisição procurando apenas o estado de numero 4 *(4: req concluída e resposta pronta)*. Quando a requisição estiver pronta verificamos se ele deu tudo certo pegando o status dela, que deverá ser *200*. E só a partir daí obtemos nosso *resolve* que *"parseamos"* para __JSON__.
+
+No exemplo de código utilizando a *Fetch API* podemos notar uma simplificação no código que terá a mesma resposta, *resolve*.
+
+class Teste {
+
+    _handleErrors(res){
+    if(!res.ok) throw new Error(res.statusText);
+    return res;
+    }
+
+    get(url) {
+        return fetch(url)
+        .then(res => this._handleErrors(res))
+        .then(res => res.json());
+    }
+}
+
+O nosso método get passa a ter apenas três linhas. Claro que para conseguirmos lidar com o status da nossa requisição, que poderá ser diferente de 200 *(status OK)*, tivemos que criar uma função *handle* que irá lidar com os status de erro, ou seja, status diferentes de 200.
+
+Outro exemplo seria a criação de uma função post com o *Fetch API*.
+
+No código abaixo podemos ver o código original, utilizando instancia de *XHR*.
+
+classe Teste{
+
+    post(url, dado) {
+
+        return new Promise((resolve, reject) => {
+
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", url, true);
+        xhr.setRequestHeader("Content-type", "application/json");
+        xhr.onreadystatechange = () => {
+
+            if (xhr.readyState == 4) {
+
+            if (xhr.status == 200) {
+
+                resolve(JSON.parse(xhr.responseText));
+            } else {
+
+                reject(xhr.responseText);
+            }
+            }
+        };
+        xhr.send(JSON.stringify(dado)); // usando JSON.stringifly para converter objeto em uma string no formato JSON.
+        });
+    }
+}
+
+Veja, temos um código um pouco parecido com o do método *get*. Porém, temos a diferença de termos que passar parametros para um *setter* do *header*.
+
+Além de termos mudado o o método da nossa requisição para *POST* e que devemos no final devolver um *send* com o nosso dado, que queremos armazenar, em forma de *String*.
+
+Podemos fazer tudo isso de uma forma mais simples com a *Fetch API*. Veja o código abaixo:
+
+classe Teste{
+
+    post(url, dado) {
+
+    return fetch(url, {
+      headers: {'Content-type': 'application/json'},
+      method: 'post',
+      body: JSON.stringify(dado)
+    }).then(res => this._handleErrors(res))
+    }
+}
+
+______________________
+
+## Transpiler: Babel
+
+Babel é um transpiler que busca trancompilar o código javascript de uma versão mais atual para uma mais antiga, fazendo um *downgrade*.
+
+A ideia é que ele passa um código de uma pasta para outra já transpilado para a versão antiga.
+
+Podemos então renomear a antiga para __app-es6__, por exemplo, e criar uma pasta __app__. Sendo assim, iremos dizer ao *Babel* que queremos passar o código de *app-es6* para *app*
+
+Antes de tudo temos que instalar o *Babel* no nosso projeto, que já deve ter sido iniciado com *yarn init* ou *npx init*
+
+`yarn add babel-cli@*versão ou sem para a ultima versão* --dev`
+`npx install babel-cli@*versão ou sem para a ultima versão* --save-dev`
+
+
+Depois, o preset do Babel, para que ele saiba transpilar para a versão que deseja.
+
+`yarn add babel-preset-es2015@6.9.0 --dev` 
+`npm install babel-preset-es2015@6.9.0 --save-dev`
+
+Depois disso, para dizermos ao *Babel* que queremos que ele transpile para a versão do nosso preset, devemos escrever isso em um arquivo script chamado __".babelrc"__ na mesma pasta que a nossa pasta origem e a nossa pasta destino se encontram.
+
+Dentro desse arquivo deve estar escrito :
+
+{
+
+  "presets": ["es2015"]
+
+}
+
+E por último no nosso arquivo __"package.json"__ criado quando iniciamos o projeto com *yarn init* ou *npx init*, deve-se ter um objeto script e passar os seguintes parametros.
+
+//package.json
+
+"scripts": {
+
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel js/app-es6 -d js/app --source-maps",
+    "watch": "babel js/app-es6 -d js/app --source-maps --watch"
+
+}
+
+O script *build* é para contruir a aplicação, ou seja, transpilar para a pasta destino todo o código da pasta origem, então nele deve-se passar o que está sendo construido, neste caso: é o babel; a pasta origem: js/app-es6; e a pasta destino -d: js/app. o *--source-maps* serve para que, ao gerar um erro, o babel nos mostre onde ocorreu no arquivo original, e não no transpilado.
+
+O script *watch* é para observar mudanças. Esse script é para que quando haja alteração no código, ao salvar, a aplicação é buildada, e a alteração é transpilada imediatamente. O script é igual ao script *build* com a diferença de um *--watch* que é o responsavel por observar as mudanças.
 
 
 
 
+
+
+
+
+
+## Sistema de módulos do ES2015
+
+No ES2015 e Node, cada arquivo funciona como um módulo. Por este motivo, temos que "importar" todos os scripts um por um, nos atentando na ordem.
+
+Porém, se nosso projeto tiver 200 arquivos js, como os desenvolvedores serão capazes de afirmar que estão "importando" na ordem correta ?
+
+Esse é um dos problemas que os módulos querem resolver.
+
+A idéia é simples. Devemos importar e exportar os arquivos, para que outro módulo possa acess-lo.
+
+Uma classe pode ser exportada pela palavra reservada __*export*__ antes da palavra __*class*__.
+
+E o arquivo que queira importar esse módulo deve usar a sintaxe : `import {oq será importado} from 'caminho do arquivo'`
+
+Ex.:
+
+//arquivo Conta.js
+
+__*export*__ class Conta{
+
+    /*código omitido*/
+
+}
+
+class Teste{
+
+    import {Conta} from './Conta'
+
+    /*código omitido*/
+}
+
+Mesmo assim nosso sistema não saberá por qual módulo iniciar. Mas, para este problema, temos bibliotecas como *SystemJs* e *CommonJs*. O proncipio é o mesmo, devemos criar um arquivo responsável por iniciar o carregamento do módulo que irá carregar os demais em cascata.
