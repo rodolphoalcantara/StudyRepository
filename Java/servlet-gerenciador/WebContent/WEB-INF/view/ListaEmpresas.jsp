@@ -14,8 +14,21 @@
 <title>Lista de Empresas</title>
 </head>
 <body>
+	
+	<c:import url="logout-parcial.jsp" />
+	
+	Usuario Logado: ${usuarioLogado.login }
+
+	<br>
+	<br>
+	<br>
+
 
 	Lista de empresas: <br />
+	
+	<c:if test="${ not empty empresa}">
+		Empresa ${ empresa } cadastrada com sucesso!
+	</c:if>
 	
 	
 	<ul>
@@ -23,8 +36,8 @@
 		
 		<li>
 			${ empresa.nome } - <fmt:formatDate value="${ empresa.dataAbertura }" pattern="dd/MM/yyyy"/> 
-			<a href="/servlet-gerenciador/entrada?acao=mostra-empresa&id=${ empresa.id }">editar</a> 
-			<a href="/servlet-gerenciador/entrada?acao=remove-empresa&id=${ empresa.id }">remover</a>
+			<a href="/servlet-gerenciador/entrada?acao=MostraEmpresa&id=${ empresa.id }">editar</a> 
+			<a href="/servlet-gerenciador/entrada?acao=RemoveEmpresa&id=${ empresa.id }">remover</a>
 		</li>
 		</c:forEach>
 	</ul>
