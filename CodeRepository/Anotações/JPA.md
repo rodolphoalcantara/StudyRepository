@@ -49,6 +49,66 @@ Esses atributos serão as colunas de nossa tabela. Porém para que nossos dados 
                 /*Getters e Setters*/
         }    
 
+Uma conta de um banco deve ser capaz de fazer movimentações também. Suponhamos que em nosso sistema, temos uma classe *Movimentação* nessa classe possuimos alguns atributos como um id, um tipo de movimentação (seja de entrada ou saida), um valor, uma data e uma descrição. Todos com seus respectivos tipos. Porém, o nosso tipo de movimentação é uma constante e com isso podemos criar um Enum. Quando setamos nossos valores padrão, no nosso novo Enum, não podemos passar este valor para o banco desta forma. Para isso, podemos utilizar a anotação de Enum : __@Enumerated__ passando como parametro o tipo que queremos colocar no nosso banco, neste caso queremos que seja do tipo *String* então ficaria *EnumType.STRING*.
+
+`Veja como ficou nossa classe`
+
+        @Entity
+        public class Movimentacao {
+                
+                @Id
+                @GeneratedValue(strategy = GenerationType.IDENTITY)
+                private Long id;
+                
+                @Enumerated(EnumType.STRING)
+                private TipoMovimentacao tipoMovimentacao;
+                
+                private BigDecimal valor;
+                private LocalDateTime data;
+                private String descricao;
+                
+                /*Getters e Setters*/
+        }
+
+Além disso, nossa movimentação deve ser atribuida a uma conta. Ora... Se fazemos uma movimentação de entrada/saida ela deve vir/ir para algum lugar, não é ?
+
+Temos então que criar um atributo de nossa classe para armazenar a conta que estamos fazendo a movimentação. Mas, quando persistirmos no banco, como este atributo irá ser gravado ? Como um *varchar* ? ou um *int*? 
+
+Nós não queremos deste modo !
+
+Nesse caso devemos referenciar nossa tabela, que será criada no nosso banco, à outra tabela. E para utilizarmos a chave estrangeira que virá da nossa tabela conta, devemos utilizar uma anotação que define o relacionamento das tabelas !
+
+A anotação __@ManyToOne__ relaciona o id da Entidade conta como uma chave estrangeira da nossa tabela *Movimentação*. E ainda diz, por baixo dos panos, que o relacionamento é de __Muitos para Um__, ou seja, podem haver muitas movimentações para esta unica conta !
+
+`Veja como ficou nossa classe`
+
+        @Entity
+        public class Movimentacao {
+                
+                @Id
+                @GeneratedValue(strategy = GenerationType.IDENTITY)
+                private Long id;
+                
+                @Enumerated(EnumType.STRING)
+                private TipoMovimentacao tipoMovimentacao;
+                
+                private BigDecimal valor;
+                private LocalDateTime data;
+                private String descricao;
+
+                @ManyToOne
+	        private Conta conta;
+                
+                /*Getters e Setters*/
+        }
+
+`OBS:`
+`Relacionamentos entre entidades precisam ser configurados pelas anotações no atributo que define o relacionamento na classe`
+
+Existe também uma anotação que permite que o relacionamento __@OneToOne__ (Um para Um) seja unico, ou seja, não aceitando valores duplicados. Por padrão, quando temos um relacionamento __@OneToOne__, ainda não obtemos a restrição que é esperada por um relacionamento __@OneToOne__.
+
+No nosso caso se quisermos que um cliente seja atribuido a apenas uma conta e essa conta só pertença a este cliente e mais nenhum, podemos usar a anotação __@JoinColumn(unique = true)__ passando como parametro que o fator *unique* é verdadeiro.
+
 
 ## EntityManager
 
