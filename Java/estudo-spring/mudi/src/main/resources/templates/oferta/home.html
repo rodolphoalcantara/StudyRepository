@@ -16,15 +16,6 @@
 			<div class="card-body">
 				<div class="row">
 					<div class="col-12 col-sm-8 mb-3">
-						<div class="row">
-							<div class="col-12 col-md-5">
-								Valor: <input />
-							</div>
-							<div class="col-12 col-md-7">
-								Data da entrega: <input />
-							</div>
-						</div>
-
 						<div>Produto</div>
 						<div>
 							<a v-bind:href="pedido.urlProduto">{{ pedido.nomeProduto }}</a>
@@ -32,8 +23,27 @@
 
 						<div>Descricao</div>
 						<div>
-							<textarea class="form-control">{{ pedido.descricao }}</textarea>
+							<textarea disabled="disabled" class="form-control">{{ pedido.descricao }}</textarea>
 						</div>
+						<div class="row mt-3">
+							<div class="col-12 col-md-5">
+								Valor: <input v-bind:class="{'is-invalid':pedido.erros.valor !==''}" class="form-control " v-model="pedido.valorNegociado" />
+								<div class="invalid-feedback" v-if="pedido.erros.valor">{{pedido.erros.valor}}</div>
+							</div>
+							<div class="col-12 col-md-7">
+								Data da entrega: <input v-bind:class="{'is-invalid':pedido.erros.dataDaEntrega !==''}" class="form-control " v-model="pedido.dataDaEntrega" />
+								<div class="invalid-feedback" v-if="pedido.erros.dataDaEntrega">{{pedido.erros.dataDaEntrega}}</div>
+							</div>
+						</div>
+						<div class="mt-2">
+							<label>Comentário</label>
+							<textarea class="form-control" v-model="pedido.comentario"></textarea>
+						</div>
+						<button v-if="pedido.ofertaEnviada"
+							v-on:click="enviarOferta(pedido)" class="btn btn-success mt-2">Oferta
+							Enviada</button>
+						<button v-else v-on:click="enviarOferta(pedido)"
+							class="btn btn-primary mt-2">Enviar Oferta</button>
 					</div>
 					<div class="col-12 col-sm-4">
 						<div>
@@ -54,12 +64,43 @@
 						mounted(){
 							axios
 						      .get('http://localhost:8080/api/pedidos/aguardando')
-						      .then(response => (this.pedidos = response.data))
+						      .then(response => {
+						    	  response.data.forEach(pedido => {
+						    		  pedido.ofertaEnviada = false
+						    		  pedido.erros = {
+						    				valor: '',
+						    				dataDaEntrega: ''
+						    		  }
+						    	  })
+						    	  this.pedidos = response.data
+						    	  })
+						},
+						methods: {
+							enviarOferta: function(pedido){
+								pedido.erros = {
+					    				valor: '',
+					    				dataDaEntrega: ''
+					    		  };
+								
+								axios
+							      .post('http://localhost:8080/api/ofertas', {
+							    	  pedidoId: pedido.id,
+							    	  valor: pedido.valorNegociado,
+							    	  dataDaEntrega: pedido.dataDaEntrega,
+							    	  comentario: pedido.comentario
+							      })
+							      .then(response => pedido.ofertaEnviada = true)
+							      .catch(error => 
+							      		error.response.data.errors.forEach(error => {
+							    	  		pedido.erros[error.field] = error.defaultMessage;
+							      		})
+							      )
+							}
 						}
 			});
 		}
 	</script>
 	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-	</body>
+</body>
 </html>
