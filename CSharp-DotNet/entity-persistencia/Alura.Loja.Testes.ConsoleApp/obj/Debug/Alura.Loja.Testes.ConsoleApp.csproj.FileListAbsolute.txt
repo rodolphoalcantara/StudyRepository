@@ -1,0 +1,62 @@
+c:\users\caleum\documents\visual studio 2017\Projects\Alura.Loja\Alura.Loja.Testes.ConsoleApp\bin\Debug\Alura.Loja.Testes.ConsoleApp.exe.config
+c:\users\caleum\documents\visual studio 2017\Projects\Alura.Loja\Alura.Loja.Testes.ConsoleApp\bin\Debug\Alura.Loja.Testes.ConsoleApp.exe
+c:\users\caleum\documents\visual studio 2017\Projects\Alura.Loja\Alura.Loja.Testes.ConsoleApp\bin\Debug\Alura.Loja.Testes.ConsoleApp.pdb
+c:\users\caleum\documents\visual studio 2017\Projects\Alura.Loja\Alura.Loja.Testes.ConsoleApp\obj\Debug\Alura.Loja.Testes.ConsoleApp.csprojResolveAssemblyReference.cache
+c:\users\caleum\documents\visual studio 2017\Projects\Alura.Loja\Alura.Loja.Testes.ConsoleApp\obj\Debug\Alura.Loja.Testes.ConsoleApp.exe
+c:\users\caleum\documents\visual studio 2017\Projects\Alura.Loja\Alura.Loja.Testes.ConsoleApp\obj\Debug\Alura.Loja.Testes.ConsoleApp.pdb
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\obj\Debug\Alura.Loja.Testes.ConsoleApp.csproj.AssemblyReference.cache
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\obj\Debug\Alura.Loja.Testes.ConsoleApp.csproj.CoreCompileInputs.cache
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\obj\Debug\Alura.Loja.Testes.ConsoleApp.exe
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\obj\Debug\Alura.Loja.Testes.ConsoleApp.pdb
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\Alura.Loja.Testes.ConsoleApp.exe.config
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\Alura.Loja.Testes.ConsoleApp.exe
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\Alura.Loja.Testes.ConsoleApp.pdb
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\Microsoft.EntityFrameworkCore.dll
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\Microsoft.EntityFrameworkCore.Relational.dll
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\Microsoft.EntityFrameworkCore.SqlServer.dll
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\Microsoft.Extensions.Logging.dll
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\Microsoft.Extensions.Options.dll
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\Microsoft.Extensions.Primitives.dll
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\Microsoft.Win32.Primitives.dll
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\Remotion.Linq.dll
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\System.AppContext.dll
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\System.Collections.Immutable.dll
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\System.Console.dll
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\System.Globalization.Calendars.dll
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\System.Interactive.Async.dll
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\System.IO.Compression.dll
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\System.IO.Compression.ZipFile.dll
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\System.IO.FileSystem.dll
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\System.IO.FileSystem.Primitives.dll
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\System.Net.Http.dll
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\System.Net.Sockets.dll
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\System.Security.Cryptography.Algorithms.dll
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\System.Security.Cryptography.Encoding.dll
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\System.Security.Cryptography.Primitives.dll
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\System.Xml.ReaderWriter.dll
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\Microsoft.EntityFrameworkCore.xml
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\Microsoft.EntityFrameworkCore.Relational.xml
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\Microsoft.EntityFrameworkCore.SqlServer.xml
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\Microsoft.Extensions.Logging.xml
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\Microsoft.Extensions.Options.xml
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\Microsoft.Extensions.Primitives.xml
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\Remotion.Linq.xml
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\System.Collections.Immutable.xml
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\System.Interactive.Async.xml
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\entity-persistencia\Alura.Loja.Testes.ConsoleApp\obj\Debug\Alura.Loja.Testes.ConsoleApp.csproj.CopyComplete
