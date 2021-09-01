@@ -39,9 +39,11 @@ class _ContactsListState extends State<ContactsList> {
                   return _contactItem(
                     contact,
                     onTap: () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => TransactionForm(contact),
-                      ));
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => TransactionForm(contact),
+                        ),
+                      );
                     },
                   );
                 },
