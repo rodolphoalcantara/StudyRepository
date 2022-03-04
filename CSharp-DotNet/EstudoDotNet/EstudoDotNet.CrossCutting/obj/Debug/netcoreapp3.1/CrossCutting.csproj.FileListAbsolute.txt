@@ -1,0 +1,10 @@
+C:\Users\rodol\source\repos\EstudoDotNet\EstudoDotNet.CrossCutting\bin\Debug\netcoreapp3.1\CrossCutting.deps.json
+C:\Users\rodol\source\repos\EstudoDotNet\EstudoDotNet.CrossCutting\bin\Debug\netcoreapp3.1\CrossCutting.dll
+C:\Users\rodol\source\repos\EstudoDotNet\EstudoDotNet.CrossCutting\bin\Debug\netcoreapp3.1\CrossCutting.pdb
+C:\Users\rodol\source\repos\EstudoDotNet\EstudoDotNet.CrossCutting\obj\Debug\netcoreapp3.1\CrossCutting.csproj.AssemblyReference.cache
+C:\Users\rodol\source\repos\EstudoDotNet\EstudoDotNet.CrossCutting\obj\Debug\netcoreapp3.1\CrossCutting.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rodol\source\repos\EstudoDotNet\EstudoDotNet.CrossCutting\obj\Debug\netcoreapp3.1\CrossCutting.AssemblyInfoInputs.cache
+C:\Users\rodol\source\repos\EstudoDotNet\EstudoDotNet.CrossCutting\obj\Debug\netcoreapp3.1\CrossCutting.AssemblyInfo.cs
+C:\Users\rodol\source\repos\EstudoDotNet\EstudoDotNet.CrossCutting\obj\Debug\netcoreapp3.1\CrossCutting.csproj.CoreCompileInputs.cache
+C:\Users\rodol\source\repos\EstudoDotNet\EstudoDotNet.CrossCutting\obj\Debug\netcoreapp3.1\CrossCutting.dll
+C:\Users\rodol\source\repos\EstudoDotNet\EstudoDotNet.CrossCutting\obj\Debug\netcoreapp3.1\CrossCutting.pdb
