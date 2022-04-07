@@ -8,3 +8,13 @@ C:\Users\rodol\source\repos\EstudoDotNet\EstudoDotNet.Domain\obj\Debug\netcoreap
 C:\Users\rodol\source\repos\EstudoDotNet\EstudoDotNet.Domain\obj\Debug\netcoreapp3.1\Domain.csproj.CoreCompileInputs.cache
 C:\Users\rodol\source\repos\EstudoDotNet\EstudoDotNet.Domain\obj\Debug\netcoreapp3.1\Domain.dll
 C:\Users\rodol\source\repos\EstudoDotNet\EstudoDotNet.Domain\obj\Debug\netcoreapp3.1\Domain.pdb
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\EstudoDotNet\EstudoDotNet.Domain\bin\Debug\netcoreapp3.1\Domain.deps.json
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\EstudoDotNet\EstudoDotNet.Domain\bin\Debug\netcoreapp3.1\Domain.dll
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\EstudoDotNet\EstudoDotNet.Domain\bin\Debug\netcoreapp3.1\Domain.pdb
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\EstudoDotNet\EstudoDotNet.Domain\obj\Debug\netcoreapp3.1\Domain.csproj.AssemblyReference.cache
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\EstudoDotNet\EstudoDotNet.Domain\obj\Debug\netcoreapp3.1\Domain.GeneratedMSBuildEditorConfig.editorconfig
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\EstudoDotNet\EstudoDotNet.Domain\obj\Debug\netcoreapp3.1\Domain.AssemblyInfoInputs.cache
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\EstudoDotNet\EstudoDotNet.Domain\obj\Debug\netcoreapp3.1\Domain.AssemblyInfo.cs
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\EstudoDotNet\EstudoDotNet.Domain\obj\Debug\netcoreapp3.1\Domain.csproj.CoreCompileInputs.cache
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\EstudoDotNet\EstudoDotNet.Domain\obj\Debug\netcoreapp3.1\Domain.dll
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\EstudoDotNet\EstudoDotNet.Domain\obj\Debug\netcoreapp3.1\Domain.pdb
