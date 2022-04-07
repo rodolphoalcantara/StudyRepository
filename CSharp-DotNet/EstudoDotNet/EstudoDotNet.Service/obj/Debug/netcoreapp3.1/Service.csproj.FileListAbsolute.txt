@@ -8,3 +8,13 @@ C:\Users\rodol\source\repos\EstudoDotNet\EstudoDotNet.Service\obj\Debug\netcorea
 C:\Users\rodol\source\repos\EstudoDotNet\EstudoDotNet.Service\obj\Debug\netcoreapp3.1\Service.csproj.CoreCompileInputs.cache
 C:\Users\rodol\source\repos\EstudoDotNet\EstudoDotNet.Service\obj\Debug\netcoreapp3.1\Service.dll
 C:\Users\rodol\source\repos\EstudoDotNet\EstudoDotNet.Service\obj\Debug\netcoreapp3.1\Service.pdb
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\EstudoDotNet\EstudoDotNet.Service\bin\Debug\netcoreapp3.1\Service.deps.json
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\EstudoDotNet\EstudoDotNet.Service\bin\Debug\netcoreapp3.1\Service.dll
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\EstudoDotNet\EstudoDotNet.Service\bin\Debug\netcoreapp3.1\Service.pdb
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\EstudoDotNet\EstudoDotNet.Service\obj\Debug\netcoreapp3.1\Service.csproj.AssemblyReference.cache
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\EstudoDotNet\EstudoDotNet.Service\obj\Debug\netcoreapp3.1\Service.GeneratedMSBuildEditorConfig.editorconfig
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\EstudoDotNet\EstudoDotNet.Service\obj\Debug\netcoreapp3.1\Service.AssemblyInfoInputs.cache
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\EstudoDotNet\EstudoDotNet.Service\obj\Debug\netcoreapp3.1\Service.AssemblyInfo.cs
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\EstudoDotNet\EstudoDotNet.Service\obj\Debug\netcoreapp3.1\Service.csproj.CoreCompileInputs.cache
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\EstudoDotNet\EstudoDotNet.Service\obj\Debug\netcoreapp3.1\Service.dll
+Z:\Development\Estudos\StudyRepository\CSharp-DotNet\EstudoDotNet\EstudoDotNet.Service\obj\Debug\netcoreapp3.1\Service.pdb
