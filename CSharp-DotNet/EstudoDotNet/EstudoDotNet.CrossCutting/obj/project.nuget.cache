@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "k5JjcPCSC9T93kRJ2feujRZGgIWhmXAPdSz0XIClD82D/W5UT6hteR/Q6nfKQ2N3VFhCN9plZEK/MBKGYWTukg==",
+  "dgSpecHash": "PGDPuDzChY7WFgHgExSOfPMUpcX9SzUJZfkA1PCESkjExb+mkgHEY0NCifYuwTCDAvSlgWhZUjjxgo8h8HftCw==",
   "success": true,
-  "projectFilePath": "Z:\\Development\\Estudos\\StudyRepository\\CSharp-DotNet\\EstudoDotNet\\EstudoDotNet.CrossCutting\\CrossCutting.csproj",
+  "projectFilePath": "D:\\Development\\Estudos\\StudyRepository\\CSharp-DotNet\\EstudoDotNet\\EstudoDotNet.CrossCutting\\CrossCutting.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

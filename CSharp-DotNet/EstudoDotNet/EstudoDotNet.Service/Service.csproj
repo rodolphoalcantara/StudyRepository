@@ -1,5 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  <ItemGroup>
+    <ProjectReference Include="..\EstudoDotNet.Domain\Domain.csproj" />
+    <ProjectReference Include="..\EstudoDotNet.Data\Data.csproj" />
+    <ProjectReference Include="..\EstudoDotNet.CrossCutting\CrossCutting.csproj" />
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>

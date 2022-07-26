@@ -18,3 +18,13 @@ Z:\Development\Estudos\StudyRepository\CSharp-DotNet\EstudoDotNet\EstudoDotNet.C
 Z:\Development\Estudos\StudyRepository\CSharp-DotNet\EstudoDotNet\EstudoDotNet.CrossCutting\obj\Debug\netcoreapp3.1\CrossCutting.csproj.CoreCompileInputs.cache
 Z:\Development\Estudos\StudyRepository\CSharp-DotNet\EstudoDotNet\EstudoDotNet.CrossCutting\obj\Debug\netcoreapp3.1\CrossCutting.dll
 Z:\Development\Estudos\StudyRepository\CSharp-DotNet\EstudoDotNet\EstudoDotNet.CrossCutting\obj\Debug\netcoreapp3.1\CrossCutting.pdb
+D:\Development\Estudos\StudyRepository\CSharp-DotNet\EstudoDotNet\EstudoDotNet.CrossCutting\bin\Debug\netcoreapp3.1\CrossCutting.deps.json
+D:\Development\Estudos\StudyRepository\CSharp-DotNet\EstudoDotNet\EstudoDotNet.CrossCutting\bin\Debug\netcoreapp3.1\CrossCutting.dll
+D:\Development\Estudos\StudyRepository\CSharp-DotNet\EstudoDotNet\EstudoDotNet.CrossCutting\bin\Debug\netcoreapp3.1\CrossCutting.pdb
+D:\Development\Estudos\StudyRepository\CSharp-DotNet\EstudoDotNet\EstudoDotNet.CrossCutting\obj\Debug\netcoreapp3.1\CrossCutting.csproj.AssemblyReference.cache
+D:\Development\Estudos\StudyRepository\CSharp-DotNet\EstudoDotNet\EstudoDotNet.CrossCutting\obj\Debug\netcoreapp3.1\CrossCutting.GeneratedMSBuildEditorConfig.editorconfig
+D:\Development\Estudos\StudyRepository\CSharp-DotNet\EstudoDotNet\EstudoDotNet.CrossCutting\obj\Debug\netcoreapp3.1\CrossCutting.AssemblyInfoInputs.cache
+D:\Development\Estudos\StudyRepository\CSharp-DotNet\EstudoDotNet\EstudoDotNet.CrossCutting\obj\Debug\netcoreapp3.1\CrossCutting.AssemblyInfo.cs
+D:\Development\Estudos\StudyRepository\CSharp-DotNet\EstudoDotNet\EstudoDotNet.CrossCutting\obj\Debug\netcoreapp3.1\CrossCutting.csproj.CoreCompileInputs.cache
+D:\Development\Estudos\StudyRepository\CSharp-DotNet\EstudoDotNet\EstudoDotNet.CrossCutting\obj\Debug\netcoreapp3.1\CrossCutting.dll
+D:\Development\Estudos\StudyRepository\CSharp-DotNet\EstudoDotNet\EstudoDotNet.CrossCutting\obj\Debug\netcoreapp3.1\CrossCutting.pdb
