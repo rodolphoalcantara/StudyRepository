@@ -42,7 +42,7 @@ namespace Data.Repository
         {
             try
             {
-                if(item.Id == Guid.Empty)
+                if (item.Id == Guid.Empty)
                 {
                     item.Id = Guid.NewGuid();
                 }
@@ -61,7 +61,7 @@ namespace Data.Repository
             return item;
         }
 
-        public async Task<bool> ExistAsync (Guid id)
+        public async Task<bool> ExistAsync(Guid id)
         {
             return await _dataset.AnyAsync<T>(p => p.Id.Equals(id));
         }
@@ -95,7 +95,7 @@ namespace Data.Repository
             try
             {
                 var result = await _dataset.SingleOrDefaultAsync<T>(p => p.Id.Equals(item.Id));
-                if(result == null)
+                if (result == null)
                 {
                     return null;
                 }
