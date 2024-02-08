@@ -1,0 +1,12 @@
+D:\Desenvolvimento\StudyRepository\CSharp-DotNet\RESTWebAPIDesenvolvedorIO\src\DevIO.Business\bin\Debug\net6.0\DevIO.Business.deps.json
+D:\Desenvolvimento\StudyRepository\CSharp-DotNet\RESTWebAPIDesenvolvedorIO\src\DevIO.Business\bin\Debug\net6.0\DevIO.Business.dll
+D:\Desenvolvimento\StudyRepository\CSharp-DotNet\RESTWebAPIDesenvolvedorIO\src\DevIO.Business\bin\Debug\net6.0\DevIO.Business.pdb
+D:\Desenvolvimento\StudyRepository\CSharp-DotNet\RESTWebAPIDesenvolvedorIO\src\DevIO.Business\obj\Debug\net6.0\DevIO.Business.csproj.AssemblyReference.cache
+D:\Desenvolvimento\StudyRepository\CSharp-DotNet\RESTWebAPIDesenvolvedorIO\src\DevIO.Business\obj\Debug\net6.0\DevIO.Business.GeneratedMSBuildEditorConfig.editorconfig
+D:\Desenvolvimento\StudyRepository\CSharp-DotNet\RESTWebAPIDesenvolvedorIO\src\DevIO.Business\obj\Debug\net6.0\DevIO.Business.AssemblyInfoInputs.cache
+D:\Desenvolvimento\StudyRepository\CSharp-DotNet\RESTWebAPIDesenvolvedorIO\src\DevIO.Business\obj\Debug\net6.0\DevIO.Business.AssemblyInfo.cs
+D:\Desenvolvimento\StudyRepository\CSharp-DotNet\RESTWebAPIDesenvolvedorIO\src\DevIO.Business\obj\Debug\net6.0\DevIO.Business.csproj.CoreCompileInputs.cache
+D:\Desenvolvimento\StudyRepository\CSharp-DotNet\RESTWebAPIDesenvolvedorIO\src\DevIO.Business\obj\Debug\net6.0\DevIO.Business.dll
+D:\Desenvolvimento\StudyRepository\CSharp-DotNet\RESTWebAPIDesenvolvedorIO\src\DevIO.Business\obj\Debug\net6.0\refint\DevIO.Business.dll
+D:\Desenvolvimento\StudyRepository\CSharp-DotNet\RESTWebAPIDesenvolvedorIO\src\DevIO.Business\obj\Debug\net6.0\DevIO.Business.pdb
+D:\Desenvolvimento\StudyRepository\CSharp-DotNet\RESTWebAPIDesenvolvedorIO\src\DevIO.Business\obj\Debug\net6.0\ref\DevIO.Business.dll

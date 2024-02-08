@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "bue2WWaXSXYQNoyIXT3eLMkPrOZl68dN1r3nbbifTSixtNa/MxPufZveNSyg4QcUcYlEG0OjzQ4EfvlqGdnhNw==",
+  "success": true,
+  "projectFilePath": "D:\\Desenvolvimento\\StudyRepository\\CSharp-DotNet\\RESTWebAPIDesenvolvedorIO\\src\\DevIO.Business\\DevIO.Business.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\rodol\\.nuget\\packages\\fluentvalidation\\10.4.0\\fluentvalidation.10.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}
